@@ -16,10 +16,6 @@
         :icon="item.icon"
         replace
       >{{$t(item.name)}}</van-tabbar-item>
-      <!-- <van-tabbar-item icon="home-o">Tab</van-tabbar-item>
-      <van-tabbar-item icon="chart-trending-o">Tab</van-tabbar-item>
-      <van-tabbar-item icon="friends-o">Tab</van-tabbar-item>
-      <van-tabbar-item icon="user-o">Tab</van-tabbar-item>-->
     </van-tabbar>
   </div>
 </template>
@@ -32,15 +28,7 @@ export default {
       this.checkTabSelection();
     }
   },
-  computed: {
-    // 获取图标资源
-    // getTabIconSrc() {
-    //   return (item, active) => {
-    //     let img = active ? item.active : item.normal;
-    //     return "static/img/main/" + img;
-    //   };
-    // }
-  },
+  computed: {},
   data() {
     return {
       active: 0,
@@ -57,14 +45,13 @@ export default {
           name: "tab_products",
           to: "products"
         },
-        {
-          icon: "good-job-o",
-          name: "tab_discovery",
-          to: "discover"
-        },
+        // {
+        //   icon: "good-job-o",
+        //   name: "tab_discovery",
+        //   to: "discover"
+        // },
         {
           icon: "user-o",
-
           name: "tab_mine",
           to: "mine"
         }
@@ -81,11 +68,6 @@ export default {
         }
       }
     }
-    // onChange() {
-    //   let p = this.tabItemList[this.active];
-    //   // this.$route.path.endsWith(p.to);
-    //   console.log(p.to);
-    // }
   },
   mounted() {
     this.checkTabSelection();
