@@ -45,16 +45,21 @@ export default {
           name: "tab_products",
           to: "products"
         },
+        {
+          icon: "chart-trending-o",
+          name: "my_products",
+          to: "my_products"
+        }
         // {
         //   icon: "good-job-o",
         //   name: "tab_discovery",
         //   to: "discover"
         // },
-        {
-          icon: "user-o",
-          name: "tab_mine",
-          to: "mine"
-        }
+        // {
+        //   icon: "user-o",
+        //   name: "tab_mine",
+        //   to: "mine"
+        // }
       ]
     };
   },
