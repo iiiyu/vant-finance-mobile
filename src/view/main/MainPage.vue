@@ -22,10 +22,10 @@
 
 <script>
 export default {
-  name: "main-page",
+  name: 'main-page',
   watch: {
     $route() {
-      this.checkTabSelection();
+      this.checkTabSelection()
     }
   },
   computed: {},
@@ -36,19 +36,14 @@ export default {
       // Tab栏数据
       tabItemList: [
         {
-          icon: "home-o",
-          name: "tab_home",
-          to: "home"
+          icon: 'home-o',
+          name: 'tab_home',
+          to: 'home'
         },
         {
-          icon: "chart-trending-o",
-          name: "tab_products",
-          to: "products"
-        },
-        {
-          icon: "chart-trending-o",
-          name: "my_products",
-          to: "my_products"
+          icon: 'chart-trending-o',
+          name: 'my_products',
+          to: 'my_products'
         }
         // {
         //   icon: "good-job-o",
@@ -61,23 +56,23 @@ export default {
         //   to: "mine"
         // }
       ]
-    };
+    }
   },
   methods: {
     // 看一下tab栏应给高亮哪一个
     checkTabSelection() {
       for (let i = 0; i < this.tabItemList.length; i++) {
-        let p = this.tabItemList[i];
+        let p = this.tabItemList[i]
         if (this.$route.path.endsWith(p.to)) {
-          this.active = i;
+          this.active = i
         }
       }
     }
   },
   mounted() {
-    this.checkTabSelection();
+    this.checkTabSelection()
   }
-};
+}
 </script>
 
 <style scoped>
