@@ -72,7 +72,7 @@
       </div>
       <div class="align-center bottom-txt">个人资产由银行托管保障安全</div>
       <!--底部按钮-->
-      <van-button type="danger" class="bottom-btn">
+      <van-button type="danger" class="bottom-btn" @click="goToContact">
         立即投标
         <span class="btn-left">(1000万元起投)</span>
       </van-button>
@@ -92,6 +92,13 @@ export default {
         { img1: 'prod_status4.png', img2: 'prod_arrow1.png', text: '启动计划' },
         { img1: 'prod_status1.png', img2: 'prod_arrow1.png', text: '启动计划' }
       ]
+    }
+  },
+  methods: {
+    goToContact() {
+      this.$router.push({
+        name: 'Contact'
+      })
     }
   }
 }
