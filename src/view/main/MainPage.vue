@@ -8,7 +8,7 @@
     <router-view v-if="!$route.meta.keepAlive" class="main-router-view"></router-view>
     <!--下方的TabBar-->
 
-    <van-tabbar v-model="active">
+    <van-tabbar v-model="active" :safe-area-inset-bottom="true">
       <van-tabbar-item
         v-for="(item, i) in tabItemList"
         :key="i"
