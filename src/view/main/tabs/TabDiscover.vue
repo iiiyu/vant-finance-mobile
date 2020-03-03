@@ -1,9 +1,9 @@
 <template>
   <div>
-    <van-nav-bar :title="$t('tab_discovery')" fixed :z-index="10"></van-nav-bar>
+    <van-nav-bar :title="$t('insurance')" fixed :z-index="10"></van-nav-bar>
     <div class="nav-con">
       <!--顶部图片-->
-      <van-image src="static/img/discovery/discovery_banner.jpg" class="banner-img"></van-image>
+      <van-image :src="this.bannerImg" class="banner-img"></van-image>
       <!--中部内容-->
       <div style="padding: 10px">
         <div class="align-center commu-all"
@@ -24,7 +24,7 @@
       <!--下部应用入口-->
       <van-row class="line2-all">
         <van-col span="12" v-for="(it, idx) in middleApps" :key="idx" class="line2-item click-box">
-          <img :src="'static/img/discovery/'+it.icon" class="line2-icon"/>
+          <img :src="it.icon" class="line2-icon"/>
           <div>
             <div class="line2-title">{{it.title}}</div>
             <div class="line2-text light-txt">{{it.text}}</div>
@@ -40,12 +40,13 @@
     name: "tab-discover",
     data() {
       return {
+        bannerImg: require("@/assets/img/discovery/discovery_banner.jpg"),
         middleApps: [
-          {icon: 'discovery_app_icon4.png', title: '积分商城', 'text': '绝不让每一个积分落空'},
-          {icon: 'discovery_app_icon2.png', title: '融金公益', 'text': '时间有爱，融金有益'},
-          {icon: 'discovery_app_icon3.png', title: '红包广场', 'text': '福利大派送，一起来抢钱'},
-          {icon: 'discovery_app_icon1.png', title: '任务大厅', 'text': 'VIP进阶之路'},
-          {icon: 'discovery_app_icon5.png', title: '理财小公举', 'text': '算一算我的第一桶金'},
+          {icon: require("@/assets/img/discovery/discovery_app_icon4.png"), title: '积分商城', 'text': '绝不让每一个积分落空'},
+          {icon: require("@/assets/img/discovery/discovery_app_icon2.png"), title: '融金公益', 'text': '时间有爱，融金有益'},
+          {icon: require("@/assets/img/discovery/discovery_app_icon3.png"), title: '红包广场', 'text': '福利大派送，一起来抢钱'},
+          {icon: require("@/assets/img/discovery/discovery_app_icon1.png"), title: '任务大厅', 'text': 'VIP进阶之路'},
+          {icon: require("@/assets/img/discovery/discovery_app_icon5.png"), title: '理财小公举', 'text': '算一算我的第一桶金'},
         ],
       };
     },

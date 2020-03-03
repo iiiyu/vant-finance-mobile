@@ -6,7 +6,7 @@
       :style="{'background-image':'url(static/img/login/login_back.png)'}"
     >
       <div class="top-area">
-        <van-image src="static/img/login/vant_logo.png" class="top-logo"></van-image>
+        <van-image :src="this.logo" class="top-logo"></van-image>
         <div>IE Finance</div>
       </div>
       <!--用户名密码登录-->
@@ -109,6 +109,7 @@ export default {
   name: 'login-page',
   data() {
     return {
+      logo: require("@/assets/img/login/vant_logo.png"),
       userName: '',
       password: '',
       smsCode: '',

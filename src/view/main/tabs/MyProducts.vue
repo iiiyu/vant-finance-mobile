@@ -1,6 +1,6 @@
 <template>
   <div>
-    <van-nav-bar :title="$t('my_products')" fixed />
+    <van-nav-bar :title="$t('fund')" fixed />
     <van-tabs class="my-tab" animated v-model="active">
       <van-tab v-for="index in sections" :title="index" :key="index">
         <fund-product-list v-if="active == 0 "></fund-product-list>

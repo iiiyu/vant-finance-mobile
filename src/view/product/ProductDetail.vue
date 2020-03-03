@@ -50,10 +50,10 @@
         <van-row>
           <van-col span="6" class="row-item" v-for="(it,idx) in statusList" :key="idx">
             <div class="align-center">
-              <van-image :src="'static/img/product/'+it.img1" class="status-img"></van-image>
+              <van-image :src="it.img1" class="status-img"></van-image>
               <div class="status-txt">{{it.text}}</div>
             </div>
-            <van-image :src="'static/img/product/'+it.img2" v-if="idx!=3" class="arrow-img"></van-image>
+            <van-image :src="it.img2" v-if="idx!=3" class="arrow-img"></van-image>
           </van-col>
         </van-row>
       </div>
@@ -87,10 +87,10 @@ export default {
     return {
       activeNames: ['1'],
       statusList: [
-        { img1: 'prod_status2.png', img2: 'prod_arrow1.png', text: '启动计划' },
-        { img1: 'prod_status3.png', img2: 'prod_arrow1.png', text: '启动计划' },
-        { img1: 'prod_status4.png', img2: 'prod_arrow1.png', text: '启动计划' },
-        { img1: 'prod_status1.png', img2: 'prod_arrow1.png', text: '启动计划' }
+        { img1: require('@/assets/img/product/prod_status2.png'), img2: require('@/assets/img/product/prod_arrow1.png'), text: '启动计划' },
+        { img1: require('@/assets/img/product/prod_status3.png'), img2: require('@/assets/img/product/prod_arrow1.png'), text: '启动计划' },
+        { img1: require('@/assets/img/product/prod_status4.png'), img2: require('@/assets/img/product/prod_arrow1.png'), text: '启动计划' },
+        { img1: require('@/assets/img/product/prod_status1.png'), img2: require('@/assets/img/product/prod_arrow1.png'), text: '启动计划' }
       ]
     }
   },

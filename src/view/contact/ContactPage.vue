@@ -13,7 +13,7 @@
           round
           width="10rem"
           height="10rem"
-          src="static/img/mine/contact.jpg"
+          :src="this.contact"
           fit="cover"
         />
       </van-col>
@@ -29,7 +29,9 @@
 export default {
   name: 'contact-page',
   data() {
-    return {}
+    return {
+      contact: require("@/assets/img/mine/contact.jpg")
+    }
   },
   methods: {
     onClickLeft() {

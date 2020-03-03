@@ -104,7 +104,7 @@
 
 <style scoped lang="less">
   .reinput-entry {
-    color: @blue;
+    color: red;
     margin-top: 40px;
     text-decoration: underline;
   }
@@ -125,7 +125,7 @@
         display: block;
       }
       .high-dot {
-        background-color: @blue;
+        background-color: red;
       }
     }
   }

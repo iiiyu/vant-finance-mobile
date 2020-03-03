@@ -9,7 +9,7 @@
       </van-swipe>
       <!--消息按钮-->
       <!-- <div class="msg-con" @click="onMessageClick">
-        <van-image src="static/img/home/icon_message_back.png" class="msg-image"></van-image>
+        <van-image src="../../assets/img/home/icon_message_back.png" class="msg-image"></van-image>
         <div class="msg-text">3</div>
       </div>-->
       <!--文本轮播-->
@@ -23,7 +23,7 @@
     <div class="fresher-all">
       <div
         class="fresher-back align-center"
-        :style="{'background-image':'url(static/img/home/fresher_ticket_back.png)'}"
+        :style="{'background-image':'url(@/assets/img/home/fresher_ticket_back.png)'}"
       >
         <div class="fresher-top">
           <div class="fresher-left">新手专享</div>
@@ -58,7 +58,7 @@
     <!--中部应用入口-->
     <van-row class="mid-app">
       <van-col span="12" v-for="(it, idx) in middleApps" :key="idx" class="mid-item click-box">
-        <img :src="'static/img/home/'+it.icon" class="line2-icon" />
+        <img :src="it.icon" class="line2-icon" />
         <div>
           <div class="mid-title">{{it.title}}</div>
           <div class="mid-text light-txt">{{it.text}}</div>
@@ -79,7 +79,7 @@
     <!--底部说明-->
     <van-row class="bot-app">
       <van-col span="12" v-for="(it, idx) in bottomApps" :key="idx" class="bot-item">
-        <img :src="'static/img/home/'+it.icon" class="line4-icon" />
+        <img :src="it.icon" class="line4-icon" />
         <div class="bot-text">
           <div>{{it.title}}</div>
           <div class="light-txt bot-small">{{it.text}}</div>
@@ -95,8 +95,8 @@ export default {
   data() {
     return {
       swipeImages: [
-        { img: "static/img/banner/banner1.png", link: "" },
-        { img: "static/img/banner/banner2.png", link: "" }
+        { img: require("@/assets/img/banner/banner1.png"), link: "" },
+        { img: require("@/assets/img/banner/banner2.png"), link: "" }
       ],
       textSwipes: [
         {
@@ -111,23 +111,23 @@ export default {
       middleApps: [
         // { icon: "line2_icon1.png", title: "推荐有礼", text: "红包送不停" },
         // { icon: "line2_icon2.png", title: "每日签到", text: "积分等你加" },
-        { icon: "line2_icon3.png", title: "安全保障", text: "贴心小管家" },
-        { icon: "line2_icon4.png", title: "融金数据", text: "投资好帮手" }
+        { icon: require("@/assets/img/home/line2_icon3.png"), title: "安全保障", text: "贴心小管家" },
+        { icon: require("@/assets/img/home/line2_icon4.png"), title: "融金数据", text: "投资好帮手" }
       ],
       bottomApps: [
         {
-          icon: "line4_icon1.png",
+          icon: require("@/assets/img/home/line4_icon1.png"),
           title: "互联网金融协会",
           text: "会长级别单位"
         },
         {
-          icon: "line4_icon2.png",
+          icon: require("@/assets/img/home/line4_icon2.png"),
           title: "5000万融资保障",
           text: "保护您的资产安全"
         },
-        { icon: "line4_icon3.png", title: "国家AAA级企业", text: "贴心小管家" },
+        { icon: require("@/assets/img/home/line4_icon3.png"), title: "国家AAA级企业", text: "贴心小管家" },
         {
-          icon: "line4_icon4.png",
+          icon: require("@/assets/img/home/line4_icon4.png"),
           title: "银行风险控制",
           text: "第三方资金托管"
         }
