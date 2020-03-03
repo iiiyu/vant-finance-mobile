@@ -35,14 +35,29 @@ export default {
       tabBarSelect: 0,
       // Tab栏数据
       tabItemList: [
+        // {
+        //   icon: 'home-o',
+        //   name: 'tab_home',
+        //   to: 'home'
+        // },
         {
-          icon: 'home-o',
-          name: 'tab_home',
-          to: 'home'
+          icon: 'chart-trending-o',
+          name: 'borrow_money',
+          to: 'my_products'
         },
         {
           icon: 'chart-trending-o',
-          name: 'my_products',
+          name: 'manage_finances',
+          to: 'my_products'
+        },
+        {
+          icon: 'chart-trending-o',
+          name: 'fund',
+          to: 'my_products'
+        },
+        {
+          icon: 'chart-trending-o',
+          name: 'insurance',
           to: 'my_products'
         }
         // {
