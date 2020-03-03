@@ -5,7 +5,7 @@ Vue.use(VueRouter)
 
 import MainPage from '../view/main/MainPage'
 import TabHome from '../view/main/tabs/TabHome'
-import TabProducts from '../view/main/tabs/TabProducts'
+import TabFinancial from '../view/main/tabs/TabFinancial'
 import MyProducts from '../view/main/tabs/MyProducts'
 import TabDiscover from '../view/main/tabs/TabDiscover'
 import TabMine from '../view/main/tabs/TabMine'
@@ -53,6 +53,12 @@ const ProductDetail = r =>
     () => r(require('../view/product/ProductDetail')),
     'ProductDetail'
   )
+const FinancialProductDetail = r =>
+  require.ensure(
+    [],
+    () => r(require('../view/product/FinancialProductDetail')),
+    'FinancialProductDetail'
+  )
 const LoginPage = r =>
   require.ensure([], () => r(require('../view/login/LoginPage')), 'LoginPage')
 const GestureCreate = r =>
@@ -78,7 +84,7 @@ const routes = [
       {
         name: 'products',
         path: 'products',
-        component: TabProducts,
+        component: TabFinancial,
         meta: { keepAlive: true }
       },
       {
@@ -110,6 +116,7 @@ const routes = [
   { name: 'ForumPage', component: ForumPage },
   { name: 'MessagePage', component: MessagePage },
   { name: 'ProductDetail', component: ProductDetail },
+  { name: 'FinancialProductDetail', component: FinancialProductDetail },
   { name: 'MessageDetail', component: MessageDetail },
   {
     name: 'Contact',
