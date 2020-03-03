@@ -43,12 +43,12 @@ export default {
         {
           icon: 'chart-trending-o',
           name: 'borrow_money',
-          to: 'home'
+          to: 'my_products'
         },
         {
           icon: 'chart-trending-o',
           name: 'manage_finances',
-          to: 'products'
+          to: 'my_products'
         },
         {
           icon: 'chart-trending-o',
@@ -58,7 +58,7 @@ export default {
         {
           icon: 'chart-trending-o',
           name: 'insurance',
-          to: 'discover'
+          to: 'my_products'
         }
         // {
         //   icon: "good-job-o",
@@ -106,9 +106,5 @@ export default {
 .icon-img {
   margin-bottom: -1px;
   height: 25px;
-}
-
-.van-tabbar-item--active {
-  font-weight: 600;
 }
 </style>
