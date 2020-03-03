@@ -12,6 +12,8 @@
 </template>
 
 <script>
+  import '@/assets/style/icon.css'
+
   export default {
     name: "app",
     mounted() {
