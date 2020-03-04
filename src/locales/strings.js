@@ -7,7 +7,7 @@ const AppString = {
   tab_home: ['首页', 'Home'],
   tab_products: ['产品', 'Products'],
   borrow_money: ['借钱', 'Borrow money'],
-  manage_finances: ['理财', 'Manage Finances'],
+  manage_finances: ['理财', 'Finances'],
   fund: ['基金', 'Fund'],
   insurance: ['保险', 'Insurance'],
   tab_discovery: ['发现', 'Discovery'],
