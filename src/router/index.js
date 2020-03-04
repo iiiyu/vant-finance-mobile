@@ -6,7 +6,7 @@ Vue.use(VueRouter)
 import MainPage from '../view/main/MainPage'
 import TabHome from '../view/main/tabs/TabHome'
 import TabFinancial from '../view/main/tabs/TabFinancial'
-import MyProducts from '../view/main/tabs/MyProducts'
+import TabFund from '../view/main/tabs/TabFund'
 import TabDiscover from '../view/main/tabs/TabDiscover'
 import TabMine from '../view/main/tabs/TabMine'
 import ContactPage from '../view/contact/ContactPage'
@@ -59,6 +59,12 @@ const FinancialProductDetail = r =>
     () => r(require('../view/product/FinancialProductDetail')),
     'FinancialProductDetail'
   )
+const FundProductDetail = r =>
+  require.ensure(
+    [],
+    () => r(require('../view/product/FundProductDetail')),
+    'FundProductDetail'
+  )
 const LoginPage = r =>
   require.ensure([], () => r(require('../view/login/LoginPage')), 'LoginPage')
 const GestureCreate = r =>
@@ -82,20 +88,20 @@ const routes = [
         meta: { keepAlive: true }
       },
       {
-        name: 'products',
-        path: 'products',
+        name: 'finance',
+        path: 'finance',
         component: TabFinancial,
         meta: { keepAlive: true }
       },
       {
-        name: 'my_products',
-        path: 'my_products',
-        component: MyProducts,
+        name: 'fund',
+        path: 'fund',
+        component: TabFund,
         meta: { keepAlive: true }
       },
       {
-        name: 'discover',
-        path: 'discover',
+        name: 'insurance',
+        path: 'insurance',
         component: TabDiscover,
         meta: { keepAlive: true }
       },
@@ -117,6 +123,7 @@ const routes = [
   { name: 'MessagePage', component: MessagePage },
   { name: 'ProductDetail', component: ProductDetail },
   { name: 'FinancialProductDetail', component: FinancialProductDetail },
+  { name: 'FundProductDetail', component: FundProductDetail },
   { name: 'MessageDetail', component: MessageDetail },
   {
     name: 'Contact',
