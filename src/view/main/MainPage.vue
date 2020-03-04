@@ -50,17 +50,17 @@ export default {
         {
           icon: 'iconfont icon_jinrongtouzi',
           name: 'manage_finances',
-          to: 'products'
+          to: 'finance'
         },
         {
           icon: 'iconfont iconjijinguanliren',
           name: 'fund',
-          to: 'my_products'
+          to: 'fund'
         },
         {
           icon: 'iconfont iconziyuan',
           name: 'insurance',
-          to: 'discover'
+          to: 'insurance'
         }
         // {
         //   icon: "good-job-o",

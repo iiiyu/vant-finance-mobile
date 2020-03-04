@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <van-nav-bar :title="$t('manage_finances')" fixed :z-index="10" @click-right="onClickRight" style="background-color: red;">
+      <van-nav-bar :title="$t('manage_finances')" fixed :z-index="10" @click-right="onClickRight" style="background-color: #f44;">
         <van-icon name="ellipsis" slot="right" />
       </van-nav-bar>
     </div>
@@ -13,30 +13,26 @@
       </van-swipe>
     </div>
     <div class="navbar-con">
-      <!-- <van-tabs v-model="activeSort" class="sort-all" @change="onTabChange" line-width="33%" type="card">
-        <van-tab :title="it_so.title" v-for="(it_so, idx) in sortItems" :key="idx"> -->
-          <div class="prod-item click-box" v-for="(it_po,idx_p) in allProducts"
-               :key="idx_p" @click="onProductClick(it_po)">
-            <van-row>
-              <van-col span="12" class="prod-rate">
-                <div class="red-txt rate-txt"><span class="rate-big">{{it_po.rate}}</span>%+{{it_po.add}}%</div>
-                <div class="light-txt rate-ins">预期年化收益率</div>
-              </van-col>
-              <van-col span="12" class="prod-ins">
-                <div class="prod-title">{{it_po.name}}</div>
-                <div class="prod-tag">{{it_po.type}}</div>
-              </van-col>
-            </van-row>
-            <!--进度条-->
-            <van-progress :percentage="it_po.percent" color="#ff6611" class="prod-progress" :show-pivot="false">
-            </van-progress>
-            <div class="pro-amount">
-              <div>起购金额 (元)</div>
-              <div><span class="red-txt">50000.00</span></div>
-            </div>
-          </div>
-        <!-- </van-tab>
-      </van-tabs> -->
+      <div class="prod-item click-box" v-for="(it_po,idx_p) in allProducts"
+           :key="idx_p" @click="onProductClick(it_po)">
+        <van-row>
+          <van-col span="12" class="prod-rate">
+            <div class="red-txt rate-txt"><span class="rate-big">{{it_po.rate}}</span>%+{{it_po.add}}%</div>
+            <div class="light-txt rate-ins">预期年化收益率</div>
+          </van-col>
+          <van-col span="12" class="prod-ins">
+            <div class="prod-title">{{it_po.name}}</div>
+            <div class="prod-tag">{{it_po.type}}</div>
+          </van-col>
+        </van-row>
+        <!--进度条-->
+        <van-progress :percentage="it_po.percent" color="#ff6611" class="prod-progress" :show-pivot="false">
+        </van-progress>
+        <div class="pro-amount">
+          <div>起购金额 (元)</div>
+          <div><span class="red-txt">50000.00</span></div>
+        </div>
+      </div>
     </div>
     <van-action-sheet
       v-model="languageShow"
