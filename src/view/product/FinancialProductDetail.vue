@@ -1,7 +1,7 @@
 <template>
   <div>
     <van-nav-bar left-arrow @click-left="_routerBack" title="理财产品一" fixed :z-index="10"></van-nav-bar>
-    <div class="nav-con-16">
+    <div style="padding-top: 55px;">
       <!--头部信息-->
       <div class="main-con">
         <div class="van-hairline--bottom prod-name">
@@ -121,6 +121,7 @@ export default {
   border-radius: 0;
   font-size: 20px;
   height: 46px;
+  background-color: #f44;
   .btn-left {
     font-size: 14px;
   }
