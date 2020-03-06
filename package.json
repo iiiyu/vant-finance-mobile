@@ -11,7 +11,7 @@
     "build": "vue-cli-service build --mode production",
     "serve": "vue-cli-service serve",
     "lint": "vue-cli-service lint",
-    "build:test": "node build/build.js test",
+    "build:test": "vue-cli-service build --mode test_production",
     "build:prod": "node build/build.js prod",
     "pack:test": "node build/build.js test && node build/publish.js test",
     "pack:prod": "node build/build.js prod && node build/publish.js prod"

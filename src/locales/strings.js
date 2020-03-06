@@ -10,7 +10,7 @@ const AppString = {
   manage_finances: ['理财', 'Finances'],
   fund: ['基金', 'Fund'],
   insurance: ['保险', 'Insurance'],
-  tab_discovery: ['发现', 'Discovery'],
+  customer_service: ['专属客服', 'Customer Service'],
   tab_mine: ['我的', 'Mine'],
   settings: ['设置', 'Settings'],
   version: ['版本', 'Version'],
