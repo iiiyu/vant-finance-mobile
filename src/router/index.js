@@ -7,7 +7,7 @@ import MainPage from '../view/main/MainPage'
 import TabHome from '../view/main/tabs/TabHome'
 import TabFinancial from '../view/main/tabs/TabFinancial'
 import TabFund from '../view/main/tabs/TabFund'
-import TabDiscover from '../view/main/tabs/TabDiscover'
+import TabInsurance from '../view/main/tabs/TabInsurance'
 import TabMine from '../view/main/tabs/TabMine'
 import ContactPage from '../view/contact/ContactPage'
 
@@ -65,6 +65,12 @@ const FundProductDetail = r =>
     () => r(require('../view/product/FundProductDetail')),
     'FundProductDetail'
   )
+const InsuranceProductDetail = r =>
+  require.ensure(
+    [],
+    () => r(require('../view/product/InsuranceProductDetail')),
+    'InsuranceProductDetail'
+  )
 const LoginPage = r =>
   require.ensure([], () => r(require('../view/login/LoginPage')), 'LoginPage')
 const GestureCreate = r =>
@@ -102,7 +108,7 @@ const routes = [
       {
         name: 'insurance',
         path: 'insurance',
-        component: TabDiscover,
+        component: TabInsurance,
         meta: { keepAlive: true }
       },
       {
@@ -124,6 +130,7 @@ const routes = [
   { name: 'ProductDetail', component: ProductDetail },
   { name: 'FinancialProductDetail', component: FinancialProductDetail },
   { name: 'FundProductDetail', component: FundProductDetail },
+  { name: 'InsuranceProductDetail', component: InsuranceProductDetail },
   { name: 'MessageDetail', component: MessageDetail },
   {
     name: 'Contact',

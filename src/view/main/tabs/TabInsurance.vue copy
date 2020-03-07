@@ -1,7 +1,9 @@
 <template>
   <div>
-    <van-nav-bar :title="$t('insurance')" fixed :z-index="10"></van-nav-bar>
-    <div class="nav-con">
+    <van-nav-bar :title="$t('insurance')" fixed :z-index="10" @click-right="onClickRight" style="background-color: #f44;">
+      <van-icon name="ellipsis" slot="right" />
+    </van-nav-bar>
+    <div style="margin-top: 50px;">
       <!--顶部图片-->
       <van-image :src="this.bannerImg" class="banner-img"></van-image>
       <!--中部内容-->
@@ -37,9 +39,10 @@
 
 <script>
   export default {
-    name: "tab-discover",
+    name: "tab-insurance",
     data() {
       return {
+        languageShow: false,
         bannerImg: require("@/assets/img/discovery/discovery_banner.jpg"),
         middleApps: [
           {icon: require("@/assets/img/discovery/discovery_app_icon4.png"), title: '积分商城', 'text': '绝不让每一个积分落空'},
@@ -55,6 +58,22 @@
         this._loginOr(() => {
           this._routePush('ForumPage');
         })
+      },
+      onClickRight() {
+        this.languageShow = true
+      },
+      onSelect(item) {
+        if (item.name == '中文' || item.name == 'Chinese') {
+          localStorage.languageKey = 'zh'
+          Locale.use('zh-CN', zhCN)
+        } else if (item.name == '英语' || item.name == 'English') {
+          localStorage.languageKey = 'en'
+          Locale.use('en-US', enUS)
+        }
+
+        this.$i18n.locale = localStorage.languageKey
+
+        this.languageShow = false
       }
     },
   }
@@ -120,5 +139,15 @@
         margin-top: 2px;
       }
     }
+  }
+
+  .van-nav-bar__title {
+    color: #fff;
+  }
+
+  .van-nav-bar .van-icon {
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
   }
 </style>

@@ -99,7 +99,7 @@
                   <div>赎回费</div>
                 </van-col>
                 <van-col class="table-right" span="17">
-                  <div>1。00%</div>
+                  <div>1.00%</div>
                 </van-col>
               </van-row>
               <van-row>
@@ -297,6 +297,7 @@ export default {
   border-radius: 0;
   font-size: 20px;
   height: 46px;
+  background-color: #f44;
   .btn-left {
     font-size: 14px;
   }
