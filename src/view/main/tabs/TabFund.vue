@@ -1,30 +1,66 @@
 <template>
   <div>
-    <van-nav-bar :title="$t('my_products')" fixed />
-    <van-tabs class="my-tab" animated v-model="active">
-      <van-tab v-for="index in sections" :title="index" :key="index">
-        <fund-product-list v-if="active == 0 "></fund-product-list>
-        <financial-product-list v-if="active == 1 "></financial-product-list>
-        <loan-product-list v-if="active == 2 "></loan-product-list>
-      </van-tab>
-    </van-tabs>
+    <div>
+      <van-nav-bar :title="$t('fund')" fixed :z-index="10" @click-right="onClickRight" style="background-color: #f44;">
+        <van-icon name="ellipsis" slot="right" />
+      </van-nav-bar>
+    </div>
+    <div style="position: relative; margin: 50px 5px 5px;">
+      <van-image
+        fit="contain"
+        :src="banner"
+      />
+    </div>
+    <van-notice-bar text="温馨提示：在进行基金投资时，投资者应当谨慎判断和识别风险。" left-icon="volume-o" />
+    <div class="navbar-con" style="margin-top: -5px;">
+      <div class="click-box" v-for="(it_po,idx_p) in allProducts" style="margin-top: 12px;" 
+           :key="idx_p" @click="onProductClick(it_po)">
+        <van-panel>
+          <van-cell :title="it_po.name" icon="points" is-link />
+          <div style="padding: 20px 0; text-align: center;">
+            <van-row>
+              <van-col span="8">
+                <div class="fund-value">{{it_po.rate}}</div>
+                <div class="fund-title">预期年化收益率</div>
+              </van-col>
+              <van-col span="8">
+                <div class="fund-value">50000.00</div>
+                <div class="fund-title">起购金额 (元)</div>
+              </van-col>
+              <van-col span="8">
+                <div class="fund-value" style="font-size: 16px;">高风险</div>
+                <div class="fund-title">风险等级</div>
+              </van-col>
+            </van-row>
+          </div>
+        </van-panel>
+      </div>
+    </div>
+    <van-action-sheet
+      v-model="languageShow"
+      :actions="actions"
+      :cancel-text="$t('cancel')"
+      @select="onSelect"
+    />
   </div>
 </template>
 
 <script>
-import LoanProductList from '@/view/product/LoanProductList'
-import FundProductList from '@/view/product/FundProductList'
-import FinancialProductList from '@/view/product/FinancialProductList'
+import {Locale} from 'vant'
+import enUS from 'vant/lib/locale/lang/en-US'
+import zhCN from 'vant/lib/locale/lang/zh-CN'
 
 export default {
-  name: 'my-products',
-  components: {
-    LoanProductList,
-    FundProductList,
-    FinancialProductList
-  },
+  name: 'fund',
   data() {
     return {
+      banner: require("@/assets/img/banner/fund.png"),
+      languageShow: false,
+      actions: [
+        { name: 'Language', disabled: true},
+        { name: '中文' },
+        { name: 'English' }
+      ],
       active: 0,
       sections: ['专项化基金', '理财', '贷款'],
       loanProducts: [
@@ -183,9 +219,25 @@ export default {
   },
   methods: {
     onProductClick(item) {
-      this._routePushQ('ProductDetail', { id: item.id })
+      this._routePushQ('FundProductDetail', { id: item.id })
     },
-    onTabChange() {}
+    onTabChange() {},
+    onClickRight() {
+      this.languageShow = true
+    },
+    onSelect(item) {
+      if (item.name == '中文' || item.name == 'Chinese') {
+        localStorage.languageKey = 'zh'
+        Locale.use('zh-CN', zhCN)
+      } else if (item.name == '英语' || item.name == 'English') {
+        localStorage.languageKey = 'en'
+        Locale.use('en-US', enUS)
+      }
+
+      this.$i18n.locale = localStorage.languageKey
+
+      this.languageShow = false
+    }
   }
 }
 </script>
@@ -195,5 +247,30 @@ export default {
 .my-tab {
   margin-top: 46px;
   padding-top: 5px;
+}
+
+.van-nav-bar__title {
+  color: #fff;
+}
+
+.van-nav-bar .van-icon {
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.fund-value {
+  font-size: 18px;
+  color: #44bb00;
+}
+
+.fund-title {
+  margin-top: 5px;
+  font-size: 12px;
+  color: #666;
+}
+
+.van-panel__header {
+  padding: 0;
 }
 </style>

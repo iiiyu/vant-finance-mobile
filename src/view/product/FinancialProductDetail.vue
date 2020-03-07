@@ -1,80 +1,48 @@
 <template>
   <div>
-    <van-nav-bar left-arrow @click-left="_routerBack" title="一类投资移民" fixed :z-index="10"></van-nav-bar>
-    <div class="nav-con-16">
+    <van-nav-bar left-arrow @click-left="_routerBack" title="理财产品一" fixed :z-index="10"></van-nav-bar>
+    <div style="padding-top: 55px;">
       <!--头部信息-->
       <div class="main-con">
         <div class="van-hairline--bottom prod-name">
-          <span class="name-ico">C</span>一类投资移民
+          <span class="name-ico">C</span>理财产品一
         </div>
         <div class="align-center rate-con">
           <div class="red-txt">
             <span class="big-rate">3.25</span>%
           </div>
           <div class="rate-tit">预期年化收益</div>
-          <div class="period-txt top-mar-16">期限36个月</div>
-        </div>
-        <div>
-          <div class="pro-per">
-            投资进度
-            <span class="red-txt">64.5%</span>
-          </div>
-          <van-progress
-            :percentage="64.5"
-            color="#ff6611"
-            class="prod-progress"
-            :show-pivot="false"
-          ></van-progress>
-          <div class="pro-amount">
-            <div>项目总额10000万</div>
-            <div>
-              剩余可投
-              <span class="red-txt">8000万</span>
-            </div>
-          </div>
         </div>
       </div>
       <!--中部信息-->
-      <div class="top-mar-16 detail-con">
-        <div class="top-title van-hairline--bottom">
-          <div>一类投资移民</div>
-          <div class="period-txt">优享计划</div>
-        </div>
-        <div class="top-intro">
-          申购金额：1000万纽币起
-          投资期限：3年
-          年化收益：3.25%
-          年银行账户托管费：0.2%
-          申购费：4.5%
-        </div>
+      <div class="detail-con" style="margin-top: 10px; padding: 20px 10px;">
         <van-row>
-          <van-col span="6" class="row-item" v-for="(it,idx) in statusList" :key="idx">
-            <div class="align-center">
-              <van-image :src="it.img1" class="status-img"></van-image>
-              <div class="status-txt">{{it.text}}</div>
-            </div>
-            <van-image :src="it.img2" v-if="idx!=3" class="arrow-img"></van-image>
+          <van-col span="12" style="text-align: center;">
+            <div style="font-size: 22px; color: #44bb00; margin-bottom: 10px;">92</div>
+            <div>理财期限 (天)</div>
+          </van-col>
+          <van-col span="12" style="text-align: center;">
+            <div style="font-size: 22px; color: #44bb00; margin-bottom: 10px;">50000.00</div>
+            <div>起点金额 (元)</div>
           </van-col>
         </van-row>
       </div>
       <!--底部选项-->
-      <div class="top-mar-16">
-        <van-collapse v-model="activeNames">
-          <van-collapse-item title="计划详情" name="1">计划详情内容</van-collapse-item>
-          <van-collapse-item title="风险把控" name="2">
-            1.所有贷款项目需要经过信贷专家团队审批
-            <br />2.通过信贷团队批准后的项目需经过董事会审批
-            <br />3.董事会批准项目最终需得到并观管理人审批,背景调查选用多家全球领先背景调查权威，纽约与多伦多上市公司的软件支持
-            <br />
-          </van-collapse-item>
-          <van-collapse-item title="常见问题" name="3">常见问题内容</van-collapse-item>
-        </van-collapse>
+      <div style="margin-top: 10px;">
+        <van-cell-group>
+          <van-cell title="风险等级" value="低风险" />
+          <van-cell title="产品类型" value="保证收益类" />
+          <van-cell title="产品状态" value="募集期" />
+          <van-cell title="递增金额(元)" value="10,000.00" />
+          <van-cell title="募集期" value="2020年03月03日 ~ 2020年03月10日" />
+          <van-cell title="产品成立日" value="2020年03月10日" />
+          <van-cell title="产品结束日" value="2020年06月10日" />
+        </van-cell-group>
       </div>
       <div class="align-center bottom-txt">个人资产由银行托管保障安全</div>
       <!--底部按钮-->
       <van-button type="danger" class="bottom-btn" @click="goToContact">
-        立即投标
-        <span class="btn-left">(1000万元起投)</span>
+        立即购买
       </van-button>
     </div>
   </div>
@@ -82,7 +50,7 @@
 
 <script>
 export default {
-  name: 'product-detail',
+  name: 'financial-product-detail',
   data() {
     return {
       activeNames: ['1'],
@@ -153,6 +121,7 @@ export default {
   border-radius: 0;
   font-size: 20px;
   height: 46px;
+  background-color: #f44;
   .btn-left {
     font-size: 14px;
   }
@@ -214,5 +183,9 @@ export default {
       line-height: 20px;
     }
   }
+}
+
+.van-nav-bar .van-icon {
+  color: #aaa;
 }
 </style>

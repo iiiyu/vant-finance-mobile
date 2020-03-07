@@ -13,9 +13,11 @@
         v-for="(item, i) in tabItemList"
         :key="i"
         :to="item.to"
-        :icon="item.icon"
         replace
-      >{{$t(item.name)}}</van-tabbar-item>
+      >
+      <span>{{$t(item.name)}}</span>
+      <i slot="icon" :class="item.icon" style="font-size: 20px;"></i>
+    </van-tabbar-item>
     </van-tabbar>
   </div>
 </template>
@@ -41,24 +43,24 @@ export default {
         //   to: 'home'
         // },
         {
-          icon: 'chart-trending-o',
+          icon: 'iconfont iconjineqiandaiyueshangjin',
           name: 'borrow_money',
-          to: 'my_products'
+          to: 'home'
         },
         {
-          icon: 'chart-trending-o',
+          icon: 'iconfont icon_jinrongtouzi',
           name: 'manage_finances',
-          to: 'my_products'
+          to: 'finance'
         },
         {
-          icon: 'chart-trending-o',
+          icon: 'iconfont iconjijinguanliren',
           name: 'fund',
-          to: 'my_products'
+          to: 'fund'
         },
         {
-          icon: 'chart-trending-o',
+          icon: 'iconfont iconziyuan',
           name: 'insurance',
-          to: 'my_products'
+          to: 'insurance'
         }
         // {
         //   icon: "good-job-o",
@@ -106,5 +108,10 @@ export default {
 .icon-img {
   margin-bottom: -1px;
   height: 25px;
+}
+
+.van-tabbar-item--active {
+  font-weight: bold;
+  color: #f44;
 }
 </style>
